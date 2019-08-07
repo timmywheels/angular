@@ -15,6 +15,14 @@
   class="btn btn-primary my-2"
   [disabled]="serverName ? !allowNewServer : allowNewServer"
   (click)="onCreateServer()">Add Server</button>
-<p>{{ serverCreationStatus }}</p>
+<!--<p>{{ serverCreationStatus }}</p>-->
+
+<p *ngIf="serverName; else noServer" class="font-italic text-sm">Server <strong>{{ serverName }}</strong> was created successfully...</p>
+<ng-template #noServer>
+  <p class="font-italic text-sm">
+    Server <strong>{{ serverName }}</strong> creation failed...
+  </p>
+</ng-template>
+
 <app-server></app-server>
 <app-server></app-server>
