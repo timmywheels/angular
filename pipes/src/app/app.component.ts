@@ -7,8 +7,34 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name: string;
+  date: string;
+  amount: number;
+  height: number;
+  miles: number;
+
+  car = {
+    make: 'Subaru',
+    model: 'WRX',
+    year: 2019
+  }
 
   onNameChange(value: string) {
     this.name = value;
+  }
+
+  onDateChange(value: string) {
+    this.date = value;
+  }
+
+  onAmountChange(value: string) {
+    this.amount = parseFloat(value);
+  }
+
+  onHeightChange(value: string) {
+    this.height = parseFloat(value);
+  }
+
+  onMilesChange(value: string) {
+    this.miles = parseFloat(value);
   }
 }
